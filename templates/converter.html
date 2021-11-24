@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        .container {
+          max-width: 500px;
+          margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;color: green;"><u>Currency Converter</u></h1>
+        <form action="/" method="POST" id="myform">
+            <h2>From :</h2>
+            <input type="number" placeholder="Enter Amount" name="amount" min="0" value="{{amount}}" required="required">
+            <select required name="from_curr" id="from_curr">
+                <option value="currency">Choose Currency</option>
+                {% for currency, rate in currencies.items() %}
+                    <option value="{{currency}}" selected>{{currency}}</option>
+                {% endfor %}
+            </select>
+            <h2>To :</h2>
+            <input type="number" placeholder="Result" style="background-color:cornsilk;color:mediumblue;font-weight:bold" value="{{result}}" readonly>
+            <select required name="to_curr" id="to_curr">
+                <option value="result_currency">Choose Currency</option>
+                {% for result_currency, rate in currencies.items() %}
+                    <option value="{{result_currency}}" selected>{{result_currency}}</option>
+                {% endfor %}
+            </select>
+            <h2 style="text-align: center;"><input type="submit" style="width: 60px;height: 30px;" value="Convert"></h2>
+        </form>
+    </div>
+</body>
+</html>
