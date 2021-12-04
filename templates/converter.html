@@ -24,7 +24,7 @@
                 {% endfor %}
             </select>
             <h2>To :</h2>
-            <input type="number" placeholder="Result" style="background-color:cornsilk;color:mediumblue;font-weight:bold" value="{{result}}" readonly>
+            <input type="number" placeholder="Result" name="result" style="background-color:cornsilk;color:mediumblue;font-weight:bold" value="{{result}}" readonly>
             <select required name="to_curr" id="to_curr">
                 <option value="result_currency">Choose Currency</option>
                 {% for result_currency, rate in currencies.items() %}
